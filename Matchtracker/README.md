@@ -1,54 +1,30 @@
-# React + TypeScript + Vite
+🚀 Тестовое задание 1
+Разработать простое веб-приложение "Матч-трекер",которое:
+Загружает список матчей с API.
+Показывает названия команд, счет, статус матча.
+Позволяет обновлять данные по нажатию кнопки "Обновить".
+Отображает индикатор загрузки при запросе данных.
+Показывает сообщение об ошибке, если API недоступно.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+💡 Использование Next.js допустимо, но не обязательно. Если вы используете Next.js, то: 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Можно применять `getServerSideProps` или `getStaticProps`, если считаете это уместным. 
+- Разрешено использовать SWR / React Query для работы с API. 
+- НЕ использовать API Routes (`pages/api`), так как серверная часть уже реализована.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1️⃣ API-запрос
+Загрузить список матчей
+swagger: https://drive.google.com/file/d/1p4Y9-8KL0eCQXh2HZoGgFRK05z_Vz62U/view?usp=sharing
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+baseUrl - https://app.ftoyd.com/fronttemp-service
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Ошибка API (если сервер недоступен) должна показывать текст "Ошибка: не удалось загрузить информацию".
+2️⃣ UI (Figma)
+Figma макет:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+https://www.figma.com/design/W16WfB86EgqtcuuqLCYjgF/Test-assignment?node-id=113-741&t=hBEv4NU9JHRNcUKm-4
+
+🚀 Тестовое задание 2: Test assignment | 2

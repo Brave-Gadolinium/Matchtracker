@@ -15,7 +15,6 @@ const App: React.FC = () => {
     const fetchMatches = async () => {
       try {
           const response = await axios.get<Match[]>('https://app.ftoyd.com/fronttemp-service/fronttemp');
-          console.log(response.data.data.matches)
           setMatches(response.data.data.matches); // Извлекаем массив матчей из ответа
         } catch (err) {
         setError('Ошибка: не удалось загрузить информацию');
@@ -25,27 +24,27 @@ const App: React.FC = () => {
     fetchMatches();
   }, []);
 
-  // Подключение к WebSocket для обновления данных
-  useEffect(() => {
-    const socket = new WebSocket('wss://app.ftoyd.com/fronttemp-service/ws');
+//   // Подключение к WebSocket для обновления данных
+//   useEffect(() => {
+//     const socket = new WebSocket('https://app.ftoyd.com/fronttemp-service/fronttemp');
 
-    socket.onmessage = (event) => {
-        try {
-          const updatedData: Partial<Match> = JSON.parse(event.data); // Получаем обновленные данные
+//     socket.onmessage = (event) => {
+//         try {
+//           const updatedData: Partial<Match> = JSON.parse(event.data); // Получаем обновленные данные
   
-          // Обновляем состояние матчей на основе времени проведения матча (time)
-          setMatches((prevMatches) =>
-            prevMatches.map((match) =>
-              match.time === updatedData.time ? { ...match, ...updatedData } : match
-            )
-          );
-        } catch (error) {
-          console.error('Ошибка обработки сообщения WebSocket:', error);
-        }
-      };
+//           // Обновляем состояние матчей на основе времени проведения матча (time)
+//           setMatches((prevMatches) =>
+//             prevMatches.map((match) =>
+//               match.time === updatedData.time ? { ...match, ...updatedData } : match
+//             )
+//           );
+//         } catch (error) {
+//           console.error('Ошибка обработки сообщения WebSocket:', error);
+//         }
+//       };
 
-    return () => socket.close();
-  }, []);
+//     return () => socket.close();
+//   }, []);
 
   // Фильтрация матчей
   const filteredMatches = matches.filter((match) => {
@@ -54,6 +53,8 @@ const App: React.FC = () => {
     if (filter === 'scheduled') return match.status === 'Scheduled';
     return true; // 'all'
   });
+    
+    console.log(matches)
 
     return (
         <div className="App">

@@ -10,7 +10,7 @@ const MatchList: React.FC<MatchListProps> = ({ matches }) => {
   return (
     <div className="match-list">
       {matches.length > 0 ? (
-        matches.map((match) => <MatchCard key={match.id} match={match} />)
+        matches.map((match) => <MatchCard key={match.title} match={match} />)
       ) : (
         <p>Нет доступных матчей</p>
       )}

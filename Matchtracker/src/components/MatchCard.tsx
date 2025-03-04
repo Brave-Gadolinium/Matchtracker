@@ -33,17 +33,17 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
                 <div className='listTeam'>
                     <div className='listTeamUL'>
                         {match.awayTeam.players.map((player, index) => (
-                            <div className='pesronalStats'>
+                            <div key={index} className='pesronalStats'>
                                 <span className='boxElem'><img src="./assets/avatar_global.png" alt="" />{player.username}</span>
-                                <span className='boxElem'>Убийств: {player.kills}</span>
+                                <span className='boxElem'>Kills: {player.kills}</span>
                             </div>
                         ))}
                     </div>
                     {/* <h2>{match.awayTeam.name}</h2> */}
                     <ul className='listTeamUL'>
-                        <li className='boxElem'><strong>Место:</strong> {match.awayTeam.place}</li>
-                        <li className='boxElem'><strong>Очки:</strong> {match.awayTeam.points}</li>
-                        <li className='boxElem'><strong>Убийств:</strong> {match.awayTeam.total_kills}</li>
+                        <li className='pesronalStats'><strong>Place:</strong> {match.awayTeam.place}</li>
+                        <li className='pesronalStats'><strong>Points:</strong> {match.awayTeam.points}</li>
+                        <li className='pesronalStats'><strong>Kills:</strong> {match.awayTeam.total_kills}</li>
                     </ul>
                 </div>
           </div>
@@ -53,15 +53,15 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
                         {match.homeTeam.players.map((player, index) => (
                             <li key={index} className='pesronalStats'>
                                 <span className='boxElem'><img src="./assets/avatar_global.png" alt=""/>{player.username}</span>
-                                <span className='boxElem'>Убийств: {player.kills}</span>
+                                <span className='boxElem'>Kills: {player.kills}</span>
                             </li>
                         ))}
                     </div>
                     {/* <h2>{match.homeTeam.name}</h2> */}
                     <ul className='listTeamUL'>
-                        <li><strong>Место:</strong> {match.homeTeam.place}</li>
-                        <li><strong>Очки:</strong> {match.homeTeam.points}</li>
-                        <li><strong>Убийств:</strong> {match.homeTeam.total_kills}</li>
+                        <li className='pesronalStats'><strong>Place:</strong> {match.homeTeam.place}</li>
+                        <li className='pesronalStats'><strong>Points:</strong> {match.homeTeam.points}</li>
+                        <li className='pesronalStats'><strong>Kills:</strong> {match.homeTeam.total_kills}</li>
                     </ul>
                 </div>
           </div>
