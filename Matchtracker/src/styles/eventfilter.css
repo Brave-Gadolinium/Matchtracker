@@ -1,0 +1,43 @@
+.event-filter {
+    min-height: 56px;
+    max-height: 56px;
+    gap: 12px;
+    border-radius: border-radius/s - 4 px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    color: #B4B5B6;
+    background-color: #0B0E12;
+    border: none;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    margin-left: 24px;
+}
+
+.HeaderBoxFirst h1 {
+    font-size: 32px;
+    Line-height: 32px;
+    font-style: italic;
+    font-weight: 800;
+}
+
+.HeaderBoxSecond button {
+    background-color: #EB0237;
+    display: flex;
+    text-align: center;
+    gap: 10px;
+    border-radius: 4px;
+    padding: 16px 30px 16px 30px;
+}
+
+.HeaderBoxSecond button span {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+    letter-spacing: 0;
+}

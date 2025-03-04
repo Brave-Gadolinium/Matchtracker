@@ -1,0 +1,14 @@
+body {
+    background-color: #06080C;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.match-details {
+    margin-top: 10px;
+}

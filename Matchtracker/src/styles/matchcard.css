@@ -1,0 +1,125 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+  }  
+.match-card {
+    background-color: #0B0E12;
+    margin-bottom: 20px;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+}
+
+.team-info img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.score-status {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24.2px;
+    letter-spacing: 0%;
+}
+
+.score-status .status {
+    margin-top: 10px;
+    width: 92;
+    height: 27;
+    gap: 10px;
+    border-radius: 4px;
+    padding-top: 6px;
+    padding-right: 18px;
+    padding-bottom: 6px;
+    padding-left: 18px;
+}
+
+.status.ongoing {
+    background-color: green;
+    color: white;
+}
+
+.status.finished {
+    background-color: red;
+    color: white;
+}
+.status.scheduled {
+    background-color: rgb(255, 166, 0);
+    color: white;
+}
+
+.match-details {
+    margin-top: 20px;
+    display: flex;
+    justify-content:center;
+}
+
+.team-stats {
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+}
+
+.team-stats ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.team-stats li {
+    margin-bottom: 5px;
+}
+.HeaderBox {
+    display: flex;
+    justify-content: space-between;
+}
+.HeaderBox .HeaderBoxSecond {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeaderBox .HeaderBoxFirst {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listTeam {
+    display: flex;
+    flex-direction: column;
+}
+
+.pesronalStats {
+    display: flex;
+    justify-content: space-around;
+    background-color: #101318;
+    margin: 5px;
+    border-radius: 4px;
+    padding: 0 24px 0 24px;
+}
+
+.listTeamUL {
+    display: flex;
+}
+
+.pesronalStats .boxElem {
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+}
