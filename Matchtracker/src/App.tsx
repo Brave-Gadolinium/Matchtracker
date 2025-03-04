@@ -3,22 +3,29 @@ import axios from 'axios';
 import MatchList from './components/MatchList';
 import EventFilter from './components/EventFilter';
 import { Match } from './types.ts';
+import Loader from './components/Loader';
+
 import './App.css'
 
 const App: React.FC = () => {
   const [matches, setMatches] = useState<Match[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<'all' | 'ongoing' | 'finished' | 'scheduled'>('all');
+  const [loading, setLoading] = useState(false);
 
   // Загрузка матчей при монтировании компонента
   useEffect(() => {
-    const fetchMatches = async () => {
-      try {
-          const response = await axios.get<Match[]>('https://app.ftoyd.com/fronttemp-service/fronttemp');
-          setMatches(response.data.data.matches); // Извлекаем массив матчей из ответа
-        } catch (err) {
-        setError('Ошибка: не удалось загрузить информацию');
-      }
+      const fetchMatches = async () => {
+        setLoading(true);
+        await new Promise((resolve) => setTimeout(resolve, 1500)); 
+        try {
+            const response = await axios.get<Match[]>('https://app.ftoyd.com/fronttemp-service/fronttemp');
+            setMatches(response.data.data.matches); // Извлекаем массив матчей из ответа
+            } catch (err) {
+            setError('Ошибка: не удалось загрузить информацию');
+            } finally {
+            setLoading(false);
+        }
     };
 
     fetchMatches();
@@ -63,6 +70,7 @@ const App: React.FC = () => {
                     <h1>Match Tracker</h1>
                     <EventFilter filter={filter} setFilter={setFilter} />
                 </div>
+                {loading && <Loader />}
                 <div className='HeaderBoxSecond'>
                     <button>
                         <span>Обновить</span>
